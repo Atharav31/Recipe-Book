@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Community</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .recipe-item {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .recipe-item h2 {
+            margin-top: 0;
+        }
+        .recipe-item p {
+            margin: 5px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button:hover {background-color: #3e8e41}
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe Community</h1>
+        <!-- <form action="/recipes" method="get" style="display: inline;">
+            <button type="submit" class="link-button">My Recipe</button>
+        </form> -->
+        <a href="/recipes" class="button">My Recipe</a>
+        <% if (recipes.length > 0) { %>
+            <% recipes.forEach(recipe => { %>
+                <div class="recipe-item">
+                    <h2><%= recipe.title %></h2>
+                    <p><strong>Description:</strong> <%= recipe.description %></p>
+                    <p><strong>Ingredients:</strong> <%= recipe.ingredients.join(', ') %></p>
+                    <p><strong>Instructions:</strong> <%= recipe.instructions.join(', ') %></p>
+                    <p><strong>Prep Time:</strong> <%= recipe.prepTime %> minutes</p>
+                    <p><strong>Cook Time:</strong> <%= recipe.cookTime %> minutes</p>
+                    <p><strong>Total Time:</strong> <%= recipe.totalTime %> minutes</p>
+                    <p><strong>Servings:</strong> <%= recipe.servings %></p>
+                    <p><strong>Difficulty:</strong> <%= recipe.difficulty %></p>
+                    <p><strong>Tags:</strong> <%= recipe.tags.join(', ') %></p>
+                    <p><strong>Category:</strong> <%= recipe.category %></p>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No recipes found.</p>
+        <% } %>
+
+    </div>
+</body>
+</html>

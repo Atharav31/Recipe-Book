@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <!-- <link rel="stylesheet" href="/styles.css"> -->
+    <style>
+        body {
+            text-align: center;
+        }
+        .container {
+            border: 2px black solid;
+            text-align: left;
+            padding: 25px;
+            width: 50%;
+            margin: 0 auto;
+        }
+        .container div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>UpdateRecipe</h1>
+    <div class="container">
+        <form action="/recipes" method="post">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="servings">Servings:</label>
+                <input type="number" id="servings" name="servings" required>
+            </div>
+            <div>
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" rows="6" required></textarea>
+            </div>
+            <div>
+                <label for="prepTime">Preparation Time (minutes):</label>
+                <input type="number" id="prepTime" name="prepTime" required>
+            </div>
+            <div>
+                <label for="cookTime">Cooking Time (minutes):</label>
+                <input type="number" id="cookTime" name="cookTime" required>
+            </div>
+            <div>
+                <label for="totalTime">Total Time (minutes):</label>
+                <input type="number" id="totalTime" name="totalTime" required>
+            </div>
+            <div>
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div>
+                <label for="tags">Tags (comma-separated):</label>
+                <input type="text" id="tags" name="tags">
+            </div>
+            <div>
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Add Recipe</button>
+            <p><a href="/recipes">View Recipes</a></p>
+        </form>
+        
+    </div>
+</body>
+</html>
